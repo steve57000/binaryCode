@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Convertisseur moderne pour traduire du texte en code binaire et du code binaire en texte." />
+  <meta name="description" content="Convertisseur professionnel, rapide et accessible pour traduire du texte en code binaire UTF-8 et du code binaire en texte." />
   <title>BinaryCode — Traducteur texte ⇄ binaire</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,18 +13,18 @@
 <body>
   <main class="page-shell">
     <section class="hero" aria-labelledby="page-title">
-      <div class="hero__badge">Convertisseur instantané</div>
-      <h1 id="page-title">Traduisez facilement du texte en binaire, et du binaire en texte.</h1>
+      <div class="hero__badge">Convertisseur UTF-8 instantané</div>
+      <h1 id="page-title">Encodez du texte en binaire. Décodez du binaire sans friction.</h1>
       <p>
-        Collez votre contenu, convertissez-le en un clic, puis copiez indépendamment
-        le texte source ou le résultat grâce aux actions rapides intégrées.
+        Une interface soignée, responsive et accessible pour convertir en temps réel,
+        contrôler les octets, gérer les accents, les emojis et copier le résultat sans effort.
       </p>
     </section>
 
     <section class="converter-card" aria-label="Convertisseur texte et binaire">
       <div class="toolbar" role="group" aria-label="Choix du mode de conversion">
-        <button class="mode-button is-active" type="button" data-mode="text-to-binary">Texte → Binaire</button>
-        <button class="mode-button" type="button" data-mode="binary-to-text">Binaire → Texte</button>
+        <button class="mode-button is-active" type="button" data-mode="text-to-binary" aria-pressed="true">Texte → Binaire</button>
+        <button class="mode-button" type="button" data-mode="binary-to-text" aria-pressed="false">Binaire → Texte</button>
       </div>
 
       <div class="grid">
@@ -40,7 +40,8 @@
               <button class="ghost-button" type="button" data-clear>Effacer</button>
             </div>
           </div>
-          <textarea id="input" spellcheck="false" placeholder="Écrivez ou collez votre texte ici..."></textarea>
+          <textarea id="input" spellcheck="false" autocomplete="off" placeholder="Écrivez ou collez votre texte ici…"></textarea>
+          <p class="panel__meta" id="input-stats">0 caractère</p>
         </article>
 
         <article class="panel panel--result">
@@ -53,7 +54,8 @@
               <button class="ghost-button" type="button" data-copy="output">Copier</button>
             </div>
           </div>
-          <textarea id="output" readonly placeholder="Le résultat apparaîtra ici..."></textarea>
+          <textarea id="output" readonly placeholder="Le résultat apparaîtra ici…"></textarea>
+          <p class="panel__meta" id="output-stats">0 caractère</p>
         </article>
       </div>
 
@@ -61,6 +63,12 @@
         <p id="status" role="status" aria-live="polite">Prêt à convertir.</p>
         <button class="primary-button" type="button" id="convert">Convertir</button>
       </div>
+    </section>
+
+    <section class="quality-strip" aria-label="Garanties de qualité">
+      <article><strong>UTF-8 fiable</strong><span>Accents, symboles et emojis encodés proprement.</span></article>
+      <article><strong>Validation stricte</strong><span>Groupes binaires de 8 bits contrôlés avant décodage.</span></article>
+      <article><strong>CI Node 24</strong><span>Workflow GitHub Actions aligné sur les runtimes actuels.</span></article>
     </section>
   </main>
 
