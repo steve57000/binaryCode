@@ -1,0 +1,14 @@
+{
+  "name": "binarycode",
+  "version": "1.0.0",
+  "description": "Convertisseur texte ⇄ binaire moderne, accessible et testé.",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test",
+    "check:links": "node tests/static-check.test.js"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
